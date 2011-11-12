@@ -1,0 +1,13 @@
+#!/bin/sh
+### 1. compare the manual segmentation with the reference segemenation nodeg.vx
+###    record some quantitative measures in compare.txt
+vrdiff if=ctimage.2.vxa bf=nodseg.vx -cp of=compare.vx ig=ctimage.vs os=compare.txt
+## create a montage visualization of the comparison of the segmentations
+vclip f=10,29 compare.vx | vtile n=5,4 of=dcompare.vx
+#  Create a binary image from the boundary file 
+varend ctimage.2.vxa -b -f | v3pad x=1 y=1 z=1 |vdim -c  of=mregion.vx 
+## Create light shaded visualizations of polygon surface representations
+v3pol -t mregion.vx | v3pfilt of=mregion.vd
+v3view mregion.vd of=dmregion.vx
+v3pol -t nodseg.vx | v3pfilt of=nodseg.vd
+v3view nodseg.vd of=dnodseg.vx

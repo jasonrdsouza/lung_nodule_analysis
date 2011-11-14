@@ -1,2 +1,7 @@
 TODO:
 
+-make program to calculate "volume"
+    -make script to run the volume program
+    -do it in the test script?
+-generate more interesting test images
+    -update script to make then and run the tests on them

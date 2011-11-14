@@ -1,6 +1,21 @@
 #!/bin/sh
 
-#perform segmentation steps
+####################
+#Program to perform segmentation and noise removal of
+#3d images
+####################
+
+#Constants
+EXPECTED_ARGS=4
+E_BADARGS=65
+
+#check command line args
+if [ $# -ne $EXPECTED_ARGS ]
+then
+    echo "Usage: $0 {in} {k_size} {thresh} {out}"
+    exit $E_BADARGS
+fi
+
 echo "Input file: $1"
 echo "Kernel size: $2"
 echo "Threshold value: $3"
@@ -12,7 +27,7 @@ vfix -byte if=$1 of=temp_byte
 
 #convert to binary image
 echo "converting to thresholded binary image"
-vpix if=temp_byte th=$3 hi=255 of=temp_binary
+vpix if=temp_byte th=$3 hi=255 lo=0 of=temp_binary
 
 #morphological filtering (v3morph)
 echo "performing morphological filtering"
@@ -25,4 +40,6 @@ vdim if=temp_opened -c of=$4
 #remove temporary files
 echo "removing temporary files"
 #comment below line to examine the temporary files for debugging
-rm temp_byte temp_binary temp_opened
+#rm temp_byte temp_binary temp_opened
+
+echo

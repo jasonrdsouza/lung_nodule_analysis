@@ -13,12 +13,12 @@ VisXelem_t *VXlist;          /* VisX data structure             */
 VisXparam_t par[] =          /* command line structure          */
 {
     "if=",    0,   /* input file       */
-    "of=",    0,   /* output file      */
+//    "of=",    0,   /* output file      */
     "-v",     0,   /* visible flag     */
      0,       0    /* list termination */
 };
 #define  IVAL   par[0].val
-#define  OVAL   par[1].val
+//#define  OVAL   par[1].val
 #define  VFLAG  par[2].val
 
 main(argc, argv)
@@ -34,7 +34,7 @@ unsigned char t;
 int volume;
     Vparse(&argc, &argv, par);     /* parse the command line       */
     VXin  = VXopen(IVAL, 0);       /* open input file              */
-    VXout = VXopen(OVAL, 1);       /* open the output file         */
+//  VXout = VXopen(OVAL, 1);       /* open the output file         */
     VXlist = VXread(VXin);         /* read file                    */
     if(VXNIL == (vptr = VXfind(VXlist, VX_PBYTE))){
         fprintf(stderr, "v3df: no byte images found\n");
@@ -61,8 +61,8 @@ int volume;
 	
 	fprintf(stdout, "The volume of this 3d image is: %d\n", volume);
 	     
-    VXwrite(VXout, VXlist);       /* write data                   */
+//  VXwrite(VXout, VXlist);       /* write data                   */
     VXclose(VXin);                /* close files                  */
-    VXclose(VXout);
+//  VXclose(VXout);
     exit(0);
 }

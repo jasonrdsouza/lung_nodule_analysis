@@ -1,6 +1,7 @@
 TODO:
 
 -generate more interesting test images
+    -check lecture slides on generating interesting test images
     -update script to 
         -make them
         -run the tests on them

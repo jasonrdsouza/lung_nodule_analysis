@@ -8,3 +8,8 @@ TODO:
         -calculate volume of them
 -ask Professor Reeves for help with more complex images
     -transitioning from synthetic to real images
+-make vits 3d so that a threshold can be picked intelligently
+    -then pass this threshold value into the segment script
+-update the volume calculation to take into account the voxel size
+    -like steve said, different amount of voxels shouldnt affect volume
+

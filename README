@@ -1,0 +1,33 @@
+========
+README
+========
+
+This folder contains all the necessary programs and scripts to perform 3d image segmentation and noise removal, as well as calculating the volume of the resulting 3d object. 
+
+========
+Programs
+========
+
+segment.sh
+* shell script to segment and perform noise removal on input 3d image
+
+test_segment.sh
+* shell script to generate test images, and run the segment script on the tests
+* also performs volume calculation on the output images from the segment script
+
+v3dvol.c [v3dvol]
+* VisionX program to perform volume calculation of a 3d image
+* volume calculation must be performed on a binary image (0 & 255)
+* voxels with values of 255 are included in volume calculation
+
+cleanup.sh
+* simple shell script to quickly remove temporary files
+
+========
+Directories
+========
+
+test_segmentation
+* directory to hold test images
+* also contains output images from running segment.sh
+

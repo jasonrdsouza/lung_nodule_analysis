@@ -55,7 +55,7 @@ vgenim x=$1 y=$1 z=$1 r=$2,$2,$2 xg=$4 yg=$4 zg=$4 | vdim -c of=$DIRECTORY/in_re
 
 #Offset basic rectangle with grid
 vgenim x=$1 y=$1 z=$1 r=$2,$2,$2 l=$3,$3,$3 xg=$4 yg=$4 zg=$4 | vdim -c of=$DIRECTORY/in_rect_offset_grid.vx
-
+echo
 
 echo "Running segmentation script on tests"
 
@@ -74,4 +74,18 @@ echo "Running segmentation script on tests"
 ./segment.sh $DIRECTORY/in_rect_normal_grid.vx 2 1 $DIRECTORY/out_rect_normal_grid.vx
 
 ./segment.sh $DIRECTORY/in_rect_offset_grid.vx 2 1 $DIRECTORY/out_rect_offset_grid.vx
+echo
+
+echo "Calculating Volumes"
+
+echo "Sphere Volumes"
+./v3dvol if=$DIRECTORY/out_circle_normal_nogrid.vx
+./v3dvol if=$DIRECTORY/out_circle_offset_nogrid.vx
+./v3dvol if=$DIRECTORY/out_circle_normal_grid.vx
+./v3dvol if=$DIRECTORY/out_circle_offset_grid.vx
+echo "Cube Volumes"
+./v3dvol if=$DIRECTORY/out_rect_normal_nogrid.vx
+./v3dvol if=$DIRECTORY/out_rect_offset_nogrid.vx
+./v3dvol if=$DIRECTORY/out_rect_normal_grid.vx
+./v3dvol if=$DIRECTORY/out_rect_offset_grid.vx
 

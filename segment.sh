@@ -40,6 +40,6 @@ vdim if=temp_opened -c of=$4
 #remove temporary files
 echo "removing temporary files"
 #comment below line to examine the temporary files for debugging
-#rm temp_byte temp_binary temp_opened
+rm temp_byte temp_binary temp_opened
 
 echo

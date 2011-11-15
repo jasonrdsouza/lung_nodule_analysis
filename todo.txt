@@ -9,6 +9,7 @@ TODO:
         -calculate volume of them
 -ask Professor Reeves for help with more complex images
     -transitioning from synthetic to real images
+    -intelligent picking of kernel size?
 -use the analseg script to figure out how to make v3d images from vx 3d frames
     -simple pair of commands 
 -make vits 3d so that a threshold can be picked intelligently

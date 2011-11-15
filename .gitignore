@@ -6,3 +6,6 @@
 
 #Test image directory
 test_segmentation
+
+#Abstract image directory
+abstract_images

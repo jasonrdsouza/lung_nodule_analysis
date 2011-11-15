@@ -29,7 +29,7 @@ vfix -byte if=$1 of=temp_byte
 echo "converting to thresholded binary image"
 vpix if=temp_byte th=$3 hi=255 lo=0 of=temp_binary
 
-#morphological filtering (v3morph)
+#morphological filtering (v3morph) "opening"
 echo "performing morphological filtering"
 v3morph if=temp_binary -ed t=s s=$2,$2,$2 of=temp_opened
 

@@ -2,12 +2,15 @@ TODO:
 
 -generate more interesting test images
     -check lecture slides on generating interesting test images
+    -make test images with noise in them
     -update script to 
         -make them
         -run the tests on them
         -calculate volume of them
 -ask Professor Reeves for help with more complex images
     -transitioning from synthetic to real images
+-use the analseg script to figure out how to make v3d images from vx 3d frames
+    -simple pair of commands 
 -make vits 3d so that a threshold can be picked intelligently
     -then pass this threshold value into the segment script
 -update the volume calculation to take into account the voxel size

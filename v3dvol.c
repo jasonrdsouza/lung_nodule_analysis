@@ -32,6 +32,7 @@ VisXelem_t *vptr;
 int	   i,j,k;                  /* index counters               */
 unsigned char t;
 int volume;
+int voxel_count;
     Vparse(&argc, &argv, par);     /* parse the command line       */
     VXin  = VXopen(IVAL, 0);       /* open input file              */
 //  VXout = VXopen(OVAL, 1);       /* open the output file         */
@@ -55,11 +56,12 @@ int volume;
 	            if(im.u[k][i][j] == 255) {
 	                volume++;
 	            }
+	            voxel_count++;
 	        }
         }
     }
 	
-	fprintf(stdout, "The volume of this 3d image is: %d\n", volume);
+	fprintf(stdout, "Volume: %d | Voxel Count: %d\n", volume, voxel_count);
 	     
 //  VXwrite(VXout, VXlist);       /* write data                   */
     VXclose(VXin);                /* close files                  */

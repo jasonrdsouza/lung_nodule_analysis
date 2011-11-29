@@ -16,4 +16,4 @@ TODO:
     -then pass this threshold value into the segment script
 -update the volume calculation to take into account the voxel size
     -like steve said, different amount of voxels shouldnt affect volume
-
+-VMEDIAN!

@@ -9,3 +9,6 @@ test_segmentation
 
 #Abstract image directory
 abstract_images
+
+#CT image directory
+ct_images

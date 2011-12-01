@@ -4,21 +4,43 @@ README
 
 This folder contains all the necessary programs and scripts to perform 3d image segmentation and noise removal, as well as calculating the volume of the resulting 3d object. 
 
+With the end goal being volume calculation of interpolated lung nodules, after interpolation, segmentation can be achieved by calling the adaptive_segment.sh script as such:
+    ./adaptive_segment.sh [in_image] [kernel_size] [num_bins] [out_image]
+    Ex: ./adaptive_segment.sh ../ct_clip3 4 2000 ../out_ct_clip3
+This is followed by calling the vd3vol program to get the calculated volume as such:
+    ./v3dvol if=[input_file]
+    Ex: ./v3dvol if=$DIRECTORY/out_test2_sphere.vx
+
 ========
 Programs
 ========
 
 segment.sh
-* shell script to segment and perform noise removal on input 3d image
+* shell script to segment and perform noise removal on input 3d image with a user defined threshold
+* works on byte images
 
 test_segment.sh
-* shell script to generate test images, and run the segment script on the tests
+* shell script to generate simple byte test images, and run the segment script on the tests
 * also performs volume calculation on the output images from the segment script
+
+test_segment_abstract.sh
+* shell script to use existing test images in a folder, and perform segmentation & volume calculations on them using the developed utilities
+* used to perform tests and gather results for the abstract report
+
+adaptive_segment.sh
+* shell script to segment and perform noise removal on input 3d image with an adaptive threshold
+* works on 'short' images
 
 v3dvol.c [v3dvol]
 * VisionX program to perform volume calculation of a 3d image
 * volume calculation must be performed on a binary image (0 & 255)
 * voxels with values of 255 are included in volume calculation
+
+vits_short.c [vits_short]
+* VisionX program to perform iterative thresholding of a 3d image
+* input parameter 'b' specifies the number of bins to use for the interative thresholding
+* must be used with 'short' images
+* any pixel in the image with a value greater than the max bin is placed in the max bin.
 
 cleanup.sh
 * simple shell script to quickly remove temporary files
@@ -31,3 +53,6 @@ test_segmentation
 * directory to hold test images
 * also contains output images from running segment.sh
 
+abstract_images
+* directory to hold images used for analysis in our abstract report
+* contains test images, and output images (prefixed with out_) resulting from running test_segment_abstract.sh

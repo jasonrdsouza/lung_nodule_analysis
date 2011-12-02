@@ -36,7 +36,7 @@ echo "Begin Volume Calculation"
 for file in `ls | grep .out`; do
 echo "$file"
 cd $BIN_DIRECTORY
-./v3dvol if=$DATA_DIRECTORY/"$file"
+./v3dvol_voxel if=$DATA_DIRECTORY/"$file" xres=0.7 yres=0.7 zres=1.25
 cd $DATA_DIRECTORY
 done
 

@@ -12,3 +12,6 @@ abstract_images
 
 #CT image directory
 ct_images
+
+#report images
+reportfiles

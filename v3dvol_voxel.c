@@ -14,7 +14,7 @@ VisXparam_t par[] =          /* command line structure          */
 {
     "if=",    0,   /* input file       */
     "-v",     0,   /* visible flag     */
-    "xres =",   0,
+    "xres=",   0,
     "yres=",    0,
     "zres=",    0,
      0,       0    /* list termination */
@@ -37,9 +37,9 @@ int	   i,j,k;                  /* index counters               */
 unsigned char t;
 int nodule_voxels;
 int voxel_count;
-int xres, yres, zres;
-int voxel_volume;
-int nodule_volume;
+float xres, yres, zres;
+float voxel_volume;
+float nodule_volume;
 
     Vparse(&argc, &argv, par);     /* parse the command line       */
     VXin  = VXopen(IVAL, 0);       /* open input file              */
@@ -56,9 +56,9 @@ int nodule_volume;
 		im.bbx[1],im.bbx[2],im.bbx[3],im.bbx[4],im.bbx[5]);
     }
     
-    xres = (XRES ? atoi(XRES) : 1);
-    yres = (YRES ? atoi(YRES) : 1);
-    zres = (ZRES ? atoi(ZRES) : 1);
+    xres = (XRES ? atof(XRES) : 1);
+    yres = (YRES ? atof(YRES) : 1);
+    zres = (ZRES ? atof(ZRES) : 1);
     voxel_volume = xres * yres * zres;
     
     /* simple pixel computation -- notice the order of the loops */
@@ -76,7 +76,7 @@ int nodule_volume;
 	
 	nodule_volume = nodule_voxels * voxel_volume;
 	
-	fprintf(stdout, "Voxel Count: %d | Voxel Volume: %d | Nodule Voxel Count: %d | Nodule Volume: %d\n", voxel_count, voxel_volume, nodule_voxels, nodule_volume);
+	fprintf(stdout, "Voxel Count: %d | Voxel Volume: %f | Nodule Voxel Count: %d | Nodule Volume: %f\n", voxel_count, voxel_volume, nodule_voxels, nodule_volume);
 	     
 //  VXwrite(VXout, VXlist);       /* write data                   */
     VXclose(VXin);                /* close files                  */

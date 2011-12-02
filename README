@@ -50,6 +50,10 @@ v3dvol.c [v3dvol]
 * volume calculation must be performed on a binary image (0 & 255)
 * voxels with values of 255 are included in volume calculation
 
+v3dvol_voxel.c [v3dvol_voxel]
+* same as v3dvol, but takes into account the voxel size of the image
+* voxel size is passed in as x,y,z parameters specifying the x-y-z resolution
+
 vits_short.c [vits_short]
 * VisionX program to perform iterative thresholding of a 3d image
 * input parameter 'b' specifies the number of bins to use for the interative thresholding

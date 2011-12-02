@@ -84,15 +84,15 @@ ct_images
 reportfiles
 * images for inclusion in the final report.
 * results of the final volume calculations on all the images are stored in the volume_result_data.txt file
-    ->base-images
+     ->base-images
         * ran test_byte_images.sh on this directory
         * k_size=4, bins=260, xres=0.7, yres=0.7, zres=1.25
     ->l-images
         * ran test_byte_images.sh
-        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+        * k_size=8, bins=260, xres=0.3, yres=0.3, zres=0.4
     ->nn-images
         * ran test_byte_images.sh
-        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+        * k_size=8, bins=260, xres=0.3, yres=0.3, zres=0.4
     ->tc-images
         * ran test_byte_images.sh
-        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+        * k_size=8, bins=260, xres=0.3, yres=0.3, zres=0.4

@@ -2,7 +2,7 @@
 
 ####################
 #Program to perform segmentation and noise removal of
-#3d images
+#3d images in 'short' format
 ####################
 
 #Constants

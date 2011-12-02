@@ -15,9 +15,27 @@ This is followed by calling the vd3vol program to get the calculated volume as s
 Programs
 ========
 
+test_short_images.sh
+* Shell script that can be called on a folder of short images
+* Will perform the required segmentation, followed by volume calculation
+* Requires parameters for filter kernel size, number of bins for iterative thresholding, and the folder location containing the images to be used.
+* Depends on the adaptive_segment_short.sh script and the v3dvol visionx program
+
+test_byte_images.sh
+* Shell script very similar to test_short_images.sh, but works on byte images
+* Depends on adaptive_segment_byte.sh and v3dvol
+
+adaptive_segment_short.sh
+* script to perform adaptive segmentation through iterative thresholding of the image
+* only works on short images
+* paramters: input image location, kernel size, number of bins, output image location
+
+adaptive_segment_byte.sh
+* same as adaptive_segment_short.sh, but for byte images
+
 segment.sh
 * shell script to segment and perform noise removal on input 3d image with a user defined threshold
-* works on byte images
+* only works on byte images
 
 test_segment.sh
 * shell script to generate simple byte test images, and run the segment script on the tests
@@ -26,10 +44,6 @@ test_segment.sh
 test_segment_abstract.sh
 * shell script to use existing test images in a folder, and perform segmentation & volume calculations on them using the developed utilities
 * used to perform tests and gather results for the abstract report
-
-adaptive_segment.sh
-* shell script to segment and perform noise removal on input 3d image with an adaptive threshold
-* works on 'short' images
 
 v3dvol.c [v3dvol]
 * VisionX program to perform volume calculation of a 3d image
@@ -42,6 +56,9 @@ vits_short.c [vits_short]
 * must be used with 'short' images
 * any pixel in the image with a value greater than the max bin is placed in the max bin.
 
+vits_byte.c [vits_byte]
+* Same thing as vits_short, but for byte images
+
 cleanup.sh
 * simple shell script to quickly remove temporary files
 
@@ -50,9 +67,13 @@ Directories
 ========
 
 test_segmentation
-* directory to hold test images
+* directory to hold simple test images
 * also contains output images from running segment.sh
 
 abstract_images
 * directory to hold images used for analysis in our abstract report
 * contains test images, and output images (prefixed with out_) resulting from running test_segment_abstract.sh
+
+ct_images
+* directory to hold sample CT images to run tests on
+

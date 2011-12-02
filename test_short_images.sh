@@ -6,19 +6,21 @@
 ####################
 
 #Constants
-EXPECTED_ARGS=3
+EXPECTED_ARGS=6
 E_BADARGS=65
 BIN_DIRECTORY=~/ece5470/project
 
 #check command line args
 if [ $# -ne $EXPECTED_ARGS ]
 then
-    echo "Usage: $0 {k_size} {bins} {img_dir}"
+    echo "Usage: $0 {k_size} {bins} {img_dir} {xres} {yres} {zres}"
     exit $E_BADARGS
 fi
 
 DATA_DIRECTORY=$3
-
+xres=$4
+yres=$5
+zres=$6
 
 #go into test directory
 cd $DATA_DIRECTORY
@@ -36,7 +38,7 @@ echo "Begin Volume Calculation"
 for file in `ls | grep .out`; do
 echo "$file"
 cd $BIN_DIRECTORY
-./v3dvol if=$DATA_DIRECTORY/"$file"
+./v3dvol_voxel if=$DATA_DIRECTORY/"$file" xres=$xres yres=$yres zres=$zres
 cd $DATA_DIRECTORY
 done
 

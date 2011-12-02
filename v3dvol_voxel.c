@@ -56,13 +56,21 @@ float nodule_volume;
 		im.bbx[1],im.bbx[2],im.bbx[3],im.bbx[4],im.bbx[5]);
     }
     
+    voxel_volume = 0;
+    nodule_volume = 0;
+    xres = 0;
+    yres = 0;
+    zres = 0;
+    nodule_voxels = 0;
+    voxel_count = 0;
+
     xres = (XRES ? atof(XRES) : 1);
     yres = (YRES ? atof(YRES) : 1);
     zres = (ZRES ? atof(ZRES) : 1);
     voxel_volume = xres * yres * zres;
     
     /* simple pixel computation -- notice the order of the loops */
-    nodule_voxels = 0;
+    
     for (k = im.zlo; k <= im.zhi; k++){
         for (i = im.ylo; i <= im.yhi; i++){
             for (j = im.xlo; j <= im.xhi; j++){

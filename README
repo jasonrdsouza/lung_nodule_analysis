@@ -81,3 +81,8 @@ abstract_images
 ct_images
 * directory to hold sample CT images to run tests on
 
+reportfiles
+* images for inclusion in the final report.
+* results of the final volume calculations on all the images are stored in the volume_result_data.txt file
+
+

@@ -1,3 +1,20 @@
+===========
+Parameters
+===========
+    ->base-images
+        * ran test_byte_images.sh on this directory
+        * k_size=4, bins=260, xres=0.7, yres=0.7, zres=1.25
+    ->l-images
+        * ran test_byte_images.sh
+        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+    ->nn-images
+        * ran test_byte_images.sh
+        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+    ->tc-images
+        * ran test_byte_images.sh
+        * k_size=10, bins=260, xres=0.3, yres=0.3, zres=0.4
+
+
 ============
 base-images
 ============
@@ -28,21 +45,21 @@ l-images
 
 Begin Volume Calculation
 l_cube-noise.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1454712 | Nodule Volume: 52369.636719
+Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 138913 | Nodule Volume: 5000.868164
 l_cube.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 135045 | Nodule Volume: 4861.620117
+Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 129932 | Nodule Volume: 4677.552246
 l_ellipse.vx.out
-Voxel Count: 706662 | Voxel Volume: 0.036000 | Nodule Voxel Count: 14751 | Nodule Volume: 531.036011
+Voxel Count: 706662 | Voxel Volume: 0.036000 | Nodule Voxel Count: 14140 | Nodule Volume: 509.040039
 l_hollow-noise.vx.out
-Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 251745 | Nodule Volume: 9062.820312
+Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 23709 | Nodule Volume: 853.524048
 l_hollow.vx.out
-Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 22192 | Nodule Volume: 798.912048
+Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 20844 | Nodule Volume: 750.384033
 l_impulse.vx.out
-Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1071252 | Nodule Volume: 38565.074219
+Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1066428 | Nodule Volume: 38391.410156
 l_sphere-noise.vx.out
-Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 324189 | Nodule Volume: 11670.804688
+Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 64667 | Nodule Volume: 2328.012207
 l_sphere.vx.out
-Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 283911 | Nodule Volume: 10220.796875
+Voxel Count: 1072476 | Voxel Volume: 0.036000 | Nodule Voxel Count: 75113 | Nodule Volume: 2704.068115
 End Volume Calculation
 
 
@@ -52,21 +69,21 @@ nn-images
 
 Begin Volume Calculation
 nn_cube-noise.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 941988 | Nodule Volume: 33911.570312
+Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 114770 | Nodule Volume: 4131.720215
 nn_cube.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 131761 | Nodule Volume: 4743.396484
+Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 125391 | Nodule Volume: 4514.076172
 nn_ellipse.vx.out
-Voxel Count: 713800 | Voxel Volume: 0.036000 | Nodule Voxel Count: 14066 | Nodule Volume: 506.376038
+Voxel Count: 713800 | Voxel Volume: 0.036000 | Nodule Voxel Count: 13162 | Nodule Volume: 473.832031
 nn_hollow-noise.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 163455 | Nodule Volume: 5884.380371
+Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 16975 | Nodule Volume: 611.100037
 nn_hollow.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 21998 | Nodule Volume: 791.928040
+Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 20354 | Nodule Volume: 732.744019
 nn_impulse.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1079897 | Nodule Volume: 38876.292969
+Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1075057 | Nodule Volume: 38702.054688
 nn_sphere-noise.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 206719 | Nodule Volume: 7441.884277
+Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 48492 | Nodule Volume: 1745.712158
 nn_sphere.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 204784 | Nodule Volume: 7372.224609
+Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 70946 | Nodule Volume: 2554.056152
 End Volume Calculation
 
 
@@ -76,21 +93,17 @@ tc-images
 
 Begin Volume Calculation
 tc_cube-noise.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 4665565 | Nodule Volume: 167960.343750
-tc_cube.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 82219 | Nodule Volume: 2959.884277
+Voxel Count: 4652914 | Voxel Volume: 0.036000 | Nodule Voxel Count: 102860 | Nodule Volume: 3702.960205
 tc_cube.vx.out
-Voxel Count: 6100380 | Voxel Volume: 0.036000 | Nodule Voxel Count: 82219 | Nodule Volume: 2959.884277
+Voxel Count: 4652914 | Voxel Volume: 0.036000 | Nodule Voxel Count: 76606 | Nodule Volume: 2757.816162
 tc_ellipse.vx.out
-Voxel Count: 713800 | Voxel Volume: 0.036000 | Nodule Voxel Count: 406752 | Nodule Volume: 14643.073242
+Voxel Count: 397440 | Voxel Volume: 0.036000 | Nodule Voxel Count: 11322 | Nodule Volume: 407.592010
 tc_hollow-noise.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 665111 | Nodule Volume: 23943.998047
+Voxel Count: 655305 | Voxel Volume: 0.036000 | Nodule Voxel Count: 11402 | Nodule Volume: 410.472015
 tc_hollow.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 5698 | Nodule Volume: 205.128006
-tc_impulse.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 1079897 | Nodule Volume: 38876.292969
+Voxel Count: 655305 | Voxel Volume: 0.036000 | Nodule Voxel Count: 0 | Nodule Volume: 0.000000
 tc_sphere-noise.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 524372 | Nodule Volume: 18877.392578
+Voxel Count: 655305 | Voxel Volume: 0.036000 | Nodule Voxel Count: 45811 | Nodule Volume: 1649.196045
 tc_sphere.vx.out
-Voxel Count: 1081125 | Voxel Volume: 0.036000 | Nodule Voxel Count: 354138 | Nodule Volume: 12748.968750
+Voxel Count: 655305 | Voxel Volume: 0.036000 | Nodule Voxel Count: 44018 | Nodule Volume: 1584.648071
 End Volume Calculation

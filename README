@@ -96,3 +96,30 @@ reportfiles
     ->tc-images
         * ran test_byte_images.sh
         * k_size=8, bins=260, xres=0.3, yres=0.3, zres=0.4
+    ->base-images-ct
+        * ran adaptive_segment_short, then v3dvol_voxel
+        ->ctclip1
+            * k_size=4, bins=2000 / xres=0.664, yres=0.664, zres=1.25
+        ->ctclip2
+            * k_size=4, bins=2000 / xres=0.703, yres=0.703, zres=1.25
+        ->ctclip3
+            * k_size=4, bins=2000 / xres=0.742, yres=0.742, zres=1.25
+        ->ctclip4
+            * k_size=4, bins=2000 / xres=0.781, yres=0.781, zres=1.25
+        ->ctclip5
+            * k_size=4, bins=2000 / xres=0.736, yres=0.736, zres=1.25
+    ->ct1-images
+        * ran test_short_images
+        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+    ->ct2-images
+        * ran test_short_images
+        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+    ->ct3-images
+        * ran test_short_images
+        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+    ->ct4-images
+        * ran test_short_images
+        * k_size=14, bins=2000, xres=0.3, yres=0.3, zres=0.4
+    ->ct5-images
+        * ran test_short_images
+        * k_size=8, bins=2000, xres=0.3, yres=0.3, zres=0.4

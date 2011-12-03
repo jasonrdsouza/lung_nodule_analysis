@@ -1,0 +1,29 @@
+NAME
+        vits_short
+
+SYNOPSIS
+        vits_short [if=] [of=] [b=]
+
+DESCRIPTION
+        The vits program is what performs adaptive iterative thresholding of an input 
+        image. The only argument it expects other than an input file and output location 
+        is the number of "bins" in the image. This is essentially the range of pixel values 
+        possible in the image. Specifying a lower number of bins than actually exist in the 
+        image will simply cause pixels of greater value to be truncated down to the max 
+        value.
+        
+CONSTRAINTS
+        This program works only on short input images
+        
+OPTIONS
+        if=<file>       Specify the input file
+        
+        of=<file>      Specify the output file
+        
+        b=<int>        Specify the number of bins to use
+
+SEE ALSO
+        vits_byte
+
+AUTHORS
+        Stephen Wu, Michael Chin, Jason D'Souza (2011)

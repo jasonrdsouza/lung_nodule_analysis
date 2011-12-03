@@ -1,0 +1,25 @@
+NAME
+        v3dvol
+
+SYNOPSIS
+        v3dvol [if=] [of=]
+
+DESCRIPTION
+        This program performs the volume calculation of 3d images. Binary images are 
+        accepted as input files, and they are iterated through pixel by pixel. Every pixel 
+        with a value of 255 is considered part of the object. At the end, the total number of 
+        object pictures- qualitatively the volume- is returned.
+        
+CONSTRAINTS
+        This program works only on byte input images
+        
+OPTIONS
+        if=<file>       Specify the input file
+        
+        of=<file>      Specify the output file
+
+SEE ALSO
+        v3dvol_voxel
+
+AUTHORS
+        Stephen Wu, Michael Chin, Jason D'Souza (2011)

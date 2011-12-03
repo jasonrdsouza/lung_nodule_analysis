@@ -1,10 +1,7 @@
 TODO:
 
--Cleanup code
-
 -Write man page
     -dependancies
         -visionx programs
         -programs I wrote (v3d, etc)
-
--Make tar of code that will be submitted with the project
+    -transfer then to the zipped code submission folder

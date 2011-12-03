@@ -1,0 +1,35 @@
+NAME
+        v3dvol_voxel
+
+SYNOPSIS
+        v3dvol_voxel [if=] [of=] [xres=] [yres=] [zres=]
+
+DESCRIPTION
+        This program performs the volume calculation of 3d images. Binary images are 
+        accepted as input files, and they are iterated through pixel by pixel. Every pixel 
+        with a value of 255 is considered part of the object. At the end, the total number of 
+        object pictures- qualitatively the volume- is returned. Voxel density is also taken 
+        into account, and is specified upon invocation of the program as xres, yres, and 
+        zres values, specifying the size of the voxel in each dimension. This information is 
+        then used to multiply the resulting object volume by xres*yres*zres, thus scaling 
+        the object volume by the voxel resolution.
+        
+CONSTRAINTS
+        This program works only on byte input images
+        
+OPTIONS
+        if=<file>       Specify the input file
+        
+        of=<file>      Specify the output file
+        
+        xres=<int>   Specify the size of a voxel in the x dimension
+        
+        yres=<int>   Specify the size of a voxel in the y dimension
+        
+        zres=<int>   Specify the size of a voxel in the z dimension
+
+SEE ALSO
+        v3dvol
+
+AUTHORS
+        Stephen Wu, Michael Chin, Jason D'Souza (2011)

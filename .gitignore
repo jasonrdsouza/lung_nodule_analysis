@@ -4,6 +4,9 @@
 #Temporary Gedit Files
 *~
 
+#Zip files
+*.zip
+
 #Test image directory
 test_segmentation
 

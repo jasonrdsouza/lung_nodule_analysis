@@ -15,3 +15,6 @@ ct_images
 
 #report images
 reportfiles
+
+#folder for all the code to be included with the final report
+report_code

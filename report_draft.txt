@@ -1,0 +1,37 @@
+==========
+Segmentation
+==========
+
+Segmenting the images once they have been interpolated was necessary for two main reasons. First, proper segmentation gets rid of a lot of noise and stuff other than the interesting parts of the image, which for us were the nodules. Initially, we used a simple threshold parameter that could be passed in, to allow us to play with various different values and see what effect they had on the result. Soon, however, we realized that a more general approach was required. Many methods exist for automatic thresholding, including histogram peak detection, region growing, etc. We chose to go with an iterative thresholding algorithm that computes a threshold, then adaptively adjusts that threshold based on the average value of pixels that fall below and above the threshold. It incrementally approaches the "true" threshold, as judged by this criteria, and finishes when it has reached a steady state threshold value. The basic idea is explained in detail in (CITE TEXTBOOK OR OTHER SOURCE). This thresholding method ended up working very well for lung nodules. This makes sense because lung CT scans tend to have a sharp contrast between nodules and lung background. The nodules usually have a distinct pixel range, which allows easy segmentation. The second reason why segmentation was necessary is because our next step in the process of isolating lung nodules was morphological filtering. This filtering required binary images to work, and the adaptively thresholded image segmentation algorithm we used provided exactly that.
+
+==========
+Filtering
+==========
+
+Once we had our binary lung nodule image, we needed a way to get rid of leftover articles and noise. Morphological filtering seemed like the ideal technique because of the properties such filtering has. Our goal was to take the binary lung image and remove any blood vessels, and small irregularities that were not part of the nodule in question. On a high level, the process of morphological opening, which is erosion followed by dilation, takes a kernel and removes any part of an object that the kernel does not fit into. Thus, if we could find a kernel that was larger than any vessels and artifacts in the image, but smaller than the actual nodule, our filtering would be sucessful. Since there is no ideal kernel in all circumstances, we had to leave the kernel size as something that could be passed to our program as a parameter. As we progressed with the project, we experimented with many different values for the kernel, and slowly built up intuition as to what works best in what case. In all cases, we made our kernel spherical. Only the kernel size was changed from trial to trial. 
+
+==========
+Volume Calculation
+==========
+
+The final part of our project was to calculate the volume of the interpolated, segmented, and filtered lung nodule. The volume was a metric by which we could judge the accuracy of our process, as well as a useful "quick statistic" that in a larger scope could be relevant to a radiologist. Specifically for us, we used the volume program we wrote to calculate the volume of the input nodules after running our process on the input. We then ran the volume program on the same nodule images that had been interpreted by "experts". This gave us a best effort metric to compare our implementation with.
+
+==========
+Programs & Scripts
+==========
+
+v3dvol & v3dvol_voxel
+-----------------------------
+These programs performed the volume calculation of 3d images. Binary images are accepted as input files, and they are iterated through pixel by pixel. Every pixel with a value of 255 is considered part of the object. At the end, the total number of object pictures- qualitatively the volume- is returned. In the more advanced v3dvol_voxel, voxel density is also taken into account, as is specified upon invocation of the program as xres, yres, and zres values, specifying the size of the voxel in each dimension. This information is then used to multiply the resulting object volume by xres*yres*zres, thus scaling the object volume by the voxel resolution.
+
+vits_[byte, short]
+---------------------
+The vits program is what performs adaptive iterative thresholding of an input image. The only argument it expects other than an input file and output location is the number of "bins" in the image. This is essentially the range of pixel values possible in the image. Specifying a lower number of bins than actually exist in the image will simply cause pixels of greater value to be truncated down to the max value. The two incarnations of vits work on byte and short images respectively.
+
+adaptive_segment_[byte, short]
+----------------------------------------
+The adaptive segment script encapsulates all the steps necessary to take an input image in VisionX format, and generate a segmented, morphologically filtered, VisionX 3d output image. It takes as input the input image location, desired kernel size for morphological filtering, number of bins for iterative thresholding, and output location. The name is sort of a misnomer because this script performs not only segmentation, but also filtering. Again, the two versions work on byte and short images respectively.
+
+test_[byte, short]_images
+--------------------------------
+These two scripts tie in all the other software components associated with segmentation, filtering, and volume calculation into one command line invocation. This script exists mainly for convenience, and expects as arguments for filter kernel size, number of bins for iterative thresholding, x-y-z voxel resolution for volume calculation, and the folder location containing the images to be run through the system. When run correctly, it will perform all the steps on an image necessary to arrive at a final volume result and isolated nodule.

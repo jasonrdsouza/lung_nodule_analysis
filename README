@@ -4,12 +4,12 @@ README
 
 This folder contains all the necessary programs and scripts to perform 3d image segmentation and noise removal, as well as calculating the volume of the resulting 3d object. 
 
-With the end goal being volume calculation of interpolated lung nodules, after interpolation, segmentation can be achieved by calling the adaptive_segment.sh script as such:
-    ./adaptive_segment.sh [in_image] [kernel_size] [num_bins] [out_image]
-    Ex: ./adaptive_segment.sh ../ct_clip3 4 2000 ../out_ct_clip3
-This is followed by calling the vd3vol program to get the calculated volume as such:
-    ./v3dvol if=[input_file]
-    Ex: ./v3dvol if=$DIRECTORY/out_test2_sphere.vx
+With the end goal being volume calculation of interpolated lung nodules, after interpolation, segmentation can be achieved by calling the adaptive_segment_[byte,short].sh script as such:
+    ./adaptive_segment[byte,short].sh [in_image] [kernel_size] [num_bins] [out_image]
+This is followed by calling the vd3vol_voxel program to get the calculated volume as such:
+    ./v3dvol_voxel if=[input_file] xres=[voxel resolution in x dir] yres=[voxel resolution in y dir] zres=[voxel resolution in z dir]
+
+The test scripts bundle this functionality into an easy to use program.
 
 ========
 Programs
@@ -84,3 +84,23 @@ ct_images
 reportfiles
 * images for inclusion in the final report.
 * results of the final volume calculations on all the images are stored in the volume_result_data.txt file
+
+==========
+Program Man Pages
+==========
+
+v3dvol & v3dvol_voxel
+-----------------------------
+These programs performed the volume calculation of 3d images. Binary images are accepted as input files, and they are iterated through pixel by pixel. Every pixel with a value of 255 is considered part of the object. At the end, the total number of object pictures- qualitatively the volume- is returned. In the more advanced v3dvol_voxel, voxel density is also taken into account, as is specified upon invocation of the program as xres, yres, and zres values, specifying the size of the voxel in each dimension. This information is then used to multiply the resulting object volume by xres*yres*zres, thus scaling the object volume by the voxel resolution.
+
+vits_[byte, short]
+---------------------
+The vits program is what performs adaptive iterative thresholding of an input image. The only argument it expects other than an input file and output location is the number of "bins" in the image. This is essentially the range of pixel values possible in the image. Specifying a lower number of bins than actually exist in the image will simply cause pixels of greater value to be truncated down to the max value. The two incarnations of vits work on byte and short images respectively.
+
+adaptive_segment_[byte, short]
+----------------------------------------
+The adaptive segment script encapsulates all the steps necessary to take an input image in VisionX format, and generate a segmented, morphologically filtered, VisionX 3d output image. It takes as input the input image location, desired kernel size for morphological filtering, number of bins for iterative thresholding, and output location. The name is sort of a misnomer because this script performs not only segmentation, but also filtering. Again, the two versions work on byte and short images respectively.
+
+test_[byte, short]_images
+--------------------------------
+These two scripts tie in all the other software components associated with segmentation, filtering, and volume calculation into one command line invocation. This script exists mainly for convenience, and expects as arguments for filter kernel size, number of bins for iterative thresholding, x-y-z voxel resolution for volume calculation, and the folder location containing the images to be run through the system. When run correctly, it will perform all the steps on an image necessary to arrive at a final volume result and isolated nodule.

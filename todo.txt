@@ -2,17 +2,9 @@ TODO:
 
 -Cleanup code
 
--Test adaptive segmentation (with good results)
-    -./adaptive_segment.sh ../ct_clip3 4 2000 ../out_ct_clip3
-    -update script to 
-        -make them
-        -run the tests on them
-        -calculate volume of them
+-Write man page
+    -dependancies
+        -visionx programs
+        -programs I wrote (v3d, etc)
 
--intelligent picking of kernel size?
-
--update the volume calculation to take into account the voxel size
-    -like steve said, different amount of voxels shouldnt affect volume
-
--use the analseg script to figure out how to make v3d images from vx 3d frames
-    -simple pair of commands 
+-Make tar of code that will be submitted with the project

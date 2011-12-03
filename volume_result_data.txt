@@ -27,19 +27,19 @@ Parameters
             * k_size=4, bins=2000 / xres=0.736, yres=0.736, zres=1.25
     ->ct1-images
         * ran test_short_images
-        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+        * k_size=14, bins=2000, xres=0.3, yres=0.3, zres=0.4
     ->ct2-images
         * ran test_short_images
-        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+        * k_size=4, bins=2000, xres=0.3, yres=0.3, zres=0.4
     ->ct3-images
         * ran test_short_images
-        * k_size=10, bins=2000, xres=0.3, yres=0.3, zres=0.4
+        * k_size=4, bins=2000, xres=0.3, yres=0.3, zres=0.4
     ->ct4-images
         * ran test_short_images
         * k_size=14, bins=2000, xres=0.3, yres=0.3, zres=0.4
     ->ct5-images
         * ran test_short_images
-        * k_size=8, bins=2000, xres=0.3, yres=0.3, zres=0.4
+        * k_size=4, bins=2000, xres=0.3, yres=0.3, zres=0.4
 
 ============
 base-images
@@ -152,12 +152,13 @@ ct1-images
 
 Begin Volume Calculation
 l_ct1.out
-Voxel Count: 452790 | Voxel Volume: 0.036000 | Nodule Voxel Count: 72790 | Nodule Volume: 2620.440186
+Voxel Count: 452790 | Voxel Volume: 0.036000 | Nodule Voxel Count: 67822 | Nodule Volume: 2441.592041
 nn_ct1.out
-Voxel Count: 452790 | Voxel Volume: 0.036000 | Nodule Voxel Count: 60086 | Nodule Volume: 2163.096191
+Voxel Count: 452790 | Voxel Volume: 0.036000 | Nodule Voxel Count: 52253 | Nodule Volume: 1881.108154
 tc_ct1.out
-Voxel Count: 470844 | Voxel Volume: 0.036000 | Nodule Voxel Count: 68242 | Nodule Volume: 2456.712158
+Voxel Count: 470844 | Voxel Volume: 0.036000 | Nodule Voxel Count: 61468 | Nodule Volume: 2212.848145
 End Volume Calculation
+
 
 ============
 ct2-images
@@ -165,12 +166,13 @@ ct2-images
 
 Begin Volume Calculation
 l_ct2.out
-Voxel Count: 202608 | Voxel Volume: 0.036000 | Nodule Voxel Count: 34890 | Nodule Volume: 1256.040039
+Voxel Count: 202608 | Voxel Volume: 0.036000 | Nodule Voxel Count: 39603 | Nodule Volume: 1425.708130
 nn_ct2.out
-Voxel Count: 202608 | Voxel Volume: 0.036000 | Nodule Voxel Count: 31382 | Nodule Volume: 1129.752075
+Voxel Count: 202608 | Voxel Volume: 0.036000 | Nodule Voxel Count: 37872 | Nodule Volume: 1363.392090
 tc_ct2.out
-Voxel Count: 213452 | Voxel Volume: 0.036000 | Nodule Voxel Count: 32287 | Nodule Volume: 1162.332031
+Voxel Count: 213452 | Voxel Volume: 0.036000 | Nodule Voxel Count: 37191 | Nodule Volume: 1338.876099
 End Volume Calculation
+
 
 ============
 ct3-images
@@ -178,11 +180,11 @@ ct3-images
 
 Begin Volume Calculation
 l_ct3.out
-Voxel Count: 169884 | Voxel Volume: 0.036000 | Nodule Voxel Count: 6150 | Nodule Volume: 221.400009
+Voxel Count: 169884 | Voxel Volume: 0.036000 | Nodule Voxel Count: 7311 | Nodule Volume: 263.196014
 nn_ct3.out
-Voxel Count: 169884 | Voxel Volume: 0.036000 | Nodule Voxel Count: 3893 | Nodule Volume: 140.148010
+Voxel Count: 169884 | Voxel Volume: 0.036000 | Nodule Voxel Count: 5952 | Nodule Volume: 214.272018
 tc_ct3.out
-Voxel Count: 179560 | Voxel Volume: 0.036000 | Nodule Voxel Count: 5678 | Nodule Volume: 204.408005
+Voxel Count: 179560 | Voxel Volume: 0.036000 | Nodule Voxel Count: 7286 | Nodule Volume: 262.296021
 End Volume Calculation
 
 ============
@@ -204,9 +206,60 @@ ct5-images
 
 Begin Volume Calculation
 l_ct5.out
-Voxel Count: 194250 | Voxel Volume: 0.036000 | Nodule Voxel Count: 6115 | Nodule Volume: 220.140015
+Voxel Count: 194250 | Voxel Volume: 0.036000 | Nodule Voxel Count: 6753 | Nodule Volume: 243.108017
 nn_ct5.out
-Voxel Count: 194250 | Voxel Volume: 0.036000 | Nodule Voxel Count: 4818 | Nodule Volume: 173.448013
+Voxel Count: 194250 | Voxel Volume: 0.036000 | Nodule Voxel Count: 6071 | Nodule Volume: 218.556015
 tc_ct5.out
-Voxel Count: 205048 | Voxel Volume: 0.036000 | Nodule Voxel Count: 4880 | Nodule Volume: 175.680008
+Voxel Count: 205048 | Voxel Volume: 0.036000 | Nodule Voxel Count: 5566 | Nodule Volume: 200.376007
 End Volume Calculation
+
+============
+Expert Volume Data
+============
+
+ct1.vx
+Voxel Count: 191844 | Voxel Volume: 0.551120 | Nodule Voxel Count: 3849 | Nodule Volume: 2121.260742
+ct2-1.vx
+Voxel Count: 3584 | Voxel Volume: 0.617761 | Nodule Voxel Count: 344 | Nodule Volume: 212.509872
+ct2-2.vx
+Voxel Count: 14280 | Voxel Volume: 0.617761 | Nodule Voxel Count: 2095 | Nodule Volume: 1294.209839
+ct2-3.vx
+Voxel Count: 17820 | Voxel Volume: 0.617761 | Nodule Voxel Count: 2738 | Nodule Volume: 1691.430298
+ct2-4.vx
+Voxel Count: 14280 | Voxel Volume: 0.617761 | Nodule Voxel Count: 1953 | Nodule Volume: 1206.487671
+ct2-5.vx
+Voxel Count: 13860 | Voxel Volume: 0.617761 | Nodule Voxel Count: 1778 | Nodule Volume: 1098.379517
+ct3-1.vx
+Voxel Count: 3872 | Voxel Volume: 0.688205 | Nodule Voxel Count: 300 | Nodule Volume: 206.461487
+ct3-2.vx
+Voxel Count: 5000 | Voxel Volume: 0.688205 | Nodule Voxel Count: 537 | Nodule Volume: 369.566040
+ct3-3.vx
+Voxel Count: 3174 | Voxel Volume: 0.688205 | Nodule Voxel Count: 310 | Nodule Volume: 213.343536
+ct3-4.vx
+Voxel Count: 4600 | Voxel Volume: 0.688205 | Nodule Voxel Count: 406 | Nodule Volume: 279.411194
+ct4-1.vx
+Voxel Count: 10710 | Voxel Volume: 0.762451 | Nodule Voxel Count: 1471 | Nodule Volume: 1121.565796
+ct4-2.vx
+Voxel Count: 8928 | Voxel Volume: 0.762451 | Nodule Voxel Count: 1105 | Nodule Volume: 842.508667
+ct4-3.vx
+Voxel Count: 10098 | Voxel Volume: 0.762451 | Nodule Voxel Count: 1257 | Nodule Volume: 958.401245
+ct4-4.vx
+Voxel Count: 6930 | Voxel Volume: 0.762451 | Nodule Voxel Count: 856 | Nodule Volume: 652.658325
+ct5.vx
+Voxel Count: 3864 | Voxel Volume: 0.677120 | Nodule Voxel Count: 368 | Nodule Volume: 249.180176
+
+============
+Expert Volumes Averages
+============
+
+ct1.vx
+Average Nodule Volume: 2121.260
+ct2.vx
+Average Nodule Volume: 1322.627
+Note: Discarded ct2-1.vx as erroneously low
+ct3.vx
+Average Nodule Volume: 267.195
+ct4.vx
+Average Nodule Volume: 893.784
+ct5.vx
+Average Nodule Volume: 249.180

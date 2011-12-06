@@ -1,0 +1,33 @@
+NAME
+	nninterp, nninterp-ct, linterp, linterp-ct, tcinterp, tcinterp-ct, lekien-tcinterp - generates an interpolated version of the input image
+
+SYNOPSIS
+	interp [if=] [of=] [dx=] [dy=] [dz=] [nx=] [ny=] [nz=]
+
+DESCRIPTION
+	Interpolates 3-dimensional images using various interpolators (nearest neighbor, trilinear, tricubic).  Programs marked with the -ct suffix operate on SHORT images while unmarked programs operate on BYTE images.  lekien-tcinterp implements the algorithm mentioned by Lekien and Marsden in their publication:
+	
+	Lekien, F. and J. Marsden. "Tricubic interpolation in three dimensions." International Journal for Numerical Methods in Engineering (2005): 455-471.
+
+CONSTRAINTS
+	This family of programs operates only on short and byte 3-dimensional images with frame markers.
+
+OPTIONS
+	if=<file>	Specify the input image.
+	
+	of=<file>	Specify the output file.
+	
+	dx=<value>	Specify the length of the input image voxels in the x direction.
+	
+	dy=<value>	Specify the length of the input image voxels in the y direction.
+	
+	dz=<value>	Specify the length of the input image voxels in the z direction.	
+	
+	nx=<value>	Specify the length of the output image voxels in the x direction.
+	
+	ny=<value>	Specify the length of the output image voxels in the y direction.
+	
+	nz=<value>	Specify the length of the output image voxels in the z direction.
+
+AUTHORS
+	Stephen Wu, Michael Chin, Jason D'Souza (2011)

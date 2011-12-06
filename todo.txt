@@ -1,7 +1,0 @@
-TODO:
-
--Write man page
-    -dependancies
-        -visionx programs
-        -programs I wrote (v3d, etc)
-    -transfer then to the zipped code submission folder
